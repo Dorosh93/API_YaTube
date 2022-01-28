@@ -5,7 +5,7 @@
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
-git@github.com:Dorosh93/api_final_yatube.git
+git clone git@github.com:Dorosh93/api_final_yatube.git
 ```
 
 ```
