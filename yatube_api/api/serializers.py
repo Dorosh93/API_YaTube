@@ -44,12 +44,12 @@ class FollowSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Follow
-        validators = [
+        validators = (
             validators.UniqueTogetherValidator(
                 queryset=Follow.objects.all(),
-                fields=['user', 'following'],
+                fields=('user', 'following'),
             ),
-        ]
+        )
 
     def validate(self, data):
         if data['following'] == self.context['request'].user:
