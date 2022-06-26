@@ -1,49 +1,57 @@
-### Социальная сеть для написания постов
+# Описание проекта Api_Yatube
 
-### Как запустить проект:
+Проект представляет собой социальную сеть для публикации личных дневников. 
+Реализован API для всех моделей приложения. По запросу можно просмотреть все записи автора.
+Пользователи могут делать запросы к чужим страницам, комментировать записи различных авторов, подписываться на них.
+API доступен только аутентифицированным пользователям. Реализованы возможность поиска и фильтрации данных.
+Добавлена пагинация ответов. Модели написаны с использованием вьюсетов. 
 
-Клонировать репозиторий и перейти в него в командной строке:
+# Используемые технологии
 
-```
-git clone git@github.com:Dorosh93/api_final_yatube.git
-```
+Python 3.9, Django 2.2 LTS, Django ORM, Django REST Framework (DRF), REST API, SQLite3, CSRF, Paginator, Simple-JWT, Djoser
 
+## Как запустить проект:
+- Клонировать репозиторий и перейти в него в командной строке:
 ```
-cd api_final_yatube
+git clone https://github.com/Dorosh93/API_YaTube.git
 ```
-
-Cоздать и активировать виртуальное окружение:
-
 ```
-python3 -m venv env
+cd API_YaTube
 ```
-
+- Cоздать и активировать виртуальное окружение:
 ```
-source env/bin/activate
+py -m venv venv
 ```
-
 ```
-python3 -m pip install --upgrade pip
+source venv/bin/activate
 ```
-
-Установить зависимости из файла requirements.txt:
-
+- Установить зависимости из файла requirements.txt:
 ```
 pip install -r requirements.txt
 ```
-
-Перейти в основную папку и выполнить миграции:
-
+- Выполнить миграции:
 ```
-cd yatube_api
+python manage.py migrate
 ```
-
+- Запустить проект:
 ```
-python3 manage.py migrate
+python manage.py runserver
 ```
 
-Запустить проект:
+## Настроены такие эндпоинты:
 
 ```
-python3 manage.py runserver
+    api/v1/api-token-auth/ (POST): передаём логин и пароль, получаем токен.
+    api/v1/posts/ (GET, POST): получаем список всех постов или создаём новый пост.
+    api/v1/posts/{post_id}/ (GET, PUT, PATCH, DELETE): получаем, редактируем или удаляем пост по id.
+    api/v1/groups/ (GET): получаем список всех групп.
+    api/v1/groups/{group_id}/ (GET): получаем информацию о группе по id.
+    api/v1/posts/{post_id}/comments/ (GET, POST): получаем список всех комментариев поста с id=post_id или 
+    создаём новый, указав id поста, который хотим прокомментировать.
+    api/v1/posts/{post_id}/comments/{comment_id}/ (GET, PUT, PATCH, DELETE): получаем, редактируем или 
+    удаляем комментарий по id у поста с id=post_id.
 ```
+
+# Разработчик
+
+[Дорошенко Виктор](https://github.com/Dorosh93)
