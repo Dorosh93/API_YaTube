@@ -8,7 +8,7 @@ API доступен только аутентифицированным пол�
 
 # Используемые технологии
 
-Python 3.9, Django 2.2 LTS, Django ORM, Django REST Framework (DRF), REST API, SQLite3, Paginator, Simple-JWT, Djoser
+Python 3.9, Django 2.2 LTS, Django ORM, Django REST Framework (DRF), REST API, SQLite3, Paginator, Simple-JWT.
 
 ## Как запустить проект:
 - Клонировать репозиторий и перейти в него в командной строке:
